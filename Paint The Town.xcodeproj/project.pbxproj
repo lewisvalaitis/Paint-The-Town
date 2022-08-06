@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */; };
+		ECC6DF5B289F0A7400268CCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF5A289F0A7400268CCC /* ContentView.swift */; };
+		ECC6DF5D289F0A7600268CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC6DF5C289F0A7600268CCC /* Assets.xcassets */; };
+		ECC6DF60289F0A7600268CCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC6DF5F289F0A7600268CCC /* Preview Assets.xcassets */; };
+		ECC6DF6A289F0A7600268CCC /* Paint_The_TownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF69289F0A7600268CCC /* Paint_The_TownTests.swift */; };
+		ECC6DF74289F0A7600268CCC /* Paint_The_TownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF73289F0A7600268CCC /* Paint_The_TownUITests.swift */; };
+		ECC6DF76289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ECC6DF66289F0A7600268CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECC6DF4D289F0A7400268CCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECC6DF54289F0A7400268CCC;
+			remoteInfo = "Paint The Town";
+		};
+		ECC6DF70289F0A7600268CCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECC6DF4D289F0A7400268CCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECC6DF54289F0A7400268CCC;
+			remoteInfo = "Paint The Town";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ECC6DF55289F0A7400268CCC /* Paint The Town.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paint The Town.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownApp.swift; sourceTree = "<group>"; };
+		ECC6DF5A289F0A7400268CCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECC6DF5C289F0A7600268CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECC6DF5F289F0A7600268CCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ECC6DF65289F0A7600268CCC /* Paint The TownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paint The TownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC6DF69289F0A7600268CCC /* Paint_The_TownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownTests.swift; sourceTree = "<group>"; };
+		ECC6DF6F289F0A7600268CCC /* Paint The TownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paint The TownUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC6DF73289F0A7600268CCC /* Paint_The_TownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownUITests.swift; sourceTree = "<group>"; };
+		ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECC6DF52289F0A7400268CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF62289F0A7600268CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF6C289F0A7600268CCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECC6DF4C289F0A7400268CCC = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF57289F0A7400268CCC /* Paint The Town */,
+				ECC6DF68289F0A7600268CCC /* Paint The TownTests */,
+				ECC6DF72289F0A7600268CCC /* Paint The TownUITests */,
+				ECC6DF56289F0A7400268CCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECC6DF56289F0A7400268CCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF55289F0A7400268CCC /* Paint The Town.app */,
+				ECC6DF65289F0A7600268CCC /* Paint The TownTests.xctest */,
+				ECC6DF6F289F0A7600268CCC /* Paint The TownUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECC6DF57289F0A7400268CCC /* Paint The Town */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */,
+				ECC6DF5A289F0A7400268CCC /* ContentView.swift */,
+				ECC6DF5C289F0A7600268CCC /* Assets.xcassets */,
+				ECC6DF5E289F0A7600268CCC /* Preview Content */,
+			);
+			path = "Paint The Town";
+			sourceTree = "<group>";
+		};
+		ECC6DF5E289F0A7600268CCC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF5F289F0A7600268CCC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECC6DF68289F0A7600268CCC /* Paint The TownTests */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF69289F0A7600268CCC /* Paint_The_TownTests.swift */,
+			);
+			path = "Paint The TownTests";
+			sourceTree = "<group>";
+		};
+		ECC6DF72289F0A7600268CCC /* Paint The TownUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF73289F0A7600268CCC /* Paint_The_TownUITests.swift */,
+				ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */,
+			);
+			path = "Paint The TownUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECC6DF54289F0A7400268CCC /* Paint The Town */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC6DF79289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The Town" */;
+			buildPhases = (
+				ECC6DF51289F0A7400268CCC /* Sources */,
+				ECC6DF52289F0A7400268CCC /* Frameworks */,
+				ECC6DF53289F0A7400268CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Paint The Town";
+			productName = "Paint The Town";
+			productReference = ECC6DF55289F0A7400268CCC /* Paint The Town.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ECC6DF64289F0A7600268CCC /* Paint The TownTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC6DF7C289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The TownTests" */;
+			buildPhases = (
+				ECC6DF61289F0A7600268CCC /* Sources */,
+				ECC6DF62289F0A7600268CCC /* Frameworks */,
+				ECC6DF63289F0A7600268CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECC6DF67289F0A7600268CCC /* PBXTargetDependency */,
+			);
+			name = "Paint The TownTests";
+			productName = "Paint The TownTests";
+			productReference = ECC6DF65289F0A7600268CCC /* Paint The TownTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ECC6DF6E289F0A7600268CCC /* Paint The TownUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC6DF7F289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The TownUITests" */;
+			buildPhases = (
+				ECC6DF6B289F0A7600268CCC /* Sources */,
+				ECC6DF6C289F0A7600268CCC /* Frameworks */,
+				ECC6DF6D289F0A7600268CCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECC6DF71289F0A7600268CCC /* PBXTargetDependency */,
+			);
+			name = "Paint The TownUITests";
+			productName = "Paint The TownUITests";
+			productReference = ECC6DF6F289F0A7600268CCC /* Paint The TownUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECC6DF4D289F0A7400268CCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					ECC6DF54289F0A7400268CCC = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					ECC6DF64289F0A7600268CCC = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = ECC6DF54289F0A7400268CCC;
+					};
+					ECC6DF6E289F0A7600268CCC = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = ECC6DF54289F0A7400268CCC;
+					};
+				};
+			};
+			buildConfigurationList = ECC6DF50289F0A7400268CCC /* Build configuration list for PBXProject "Paint The Town" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECC6DF4C289F0A7400268CCC;
+			productRefGroup = ECC6DF56289F0A7400268CCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECC6DF54289F0A7400268CCC /* Paint The Town */,
+				ECC6DF64289F0A7600268CCC /* Paint The TownTests */,
+				ECC6DF6E289F0A7600268CCC /* Paint The TownUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECC6DF53289F0A7400268CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC6DF60289F0A7600268CCC /* Preview Assets.xcassets in Resources */,
+				ECC6DF5D289F0A7600268CCC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF63289F0A7600268CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF6D289F0A7600268CCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECC6DF51289F0A7400268CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC6DF5B289F0A7400268CCC /* ContentView.swift in Sources */,
+				ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF61289F0A7600268CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC6DF6A289F0A7600268CCC /* Paint_The_TownTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECC6DF6B289F0A7600268CCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC6DF74289F0A7600268CCC /* Paint_The_TownUITests.swift in Sources */,
+				ECC6DF76289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECC6DF67289F0A7600268CCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECC6DF54289F0A7400268CCC /* Paint The Town */;
+			targetProxy = ECC6DF66289F0A7600268CCC /* PBXContainerItemProxy */;
+		};
+		ECC6DF71289F0A7600268CCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECC6DF54289F0A7400268CCC /* Paint The Town */;
+			targetProxy = ECC6DF70289F0A7600268CCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ECC6DF77289F0A7600268CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECC6DF78289F0A7600268CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECC6DF7A289F0A7600268CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paint The Town/Preview Content\"";
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-Town";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECC6DF7B289F0A7600268CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paint The Town/Preview Content\"";
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-Town";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ECC6DF7D289F0A7600268CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-TownTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paint The Town.app/Paint The Town";
+			};
+			name = Debug;
+		};
+		ECC6DF7E289F0A7600268CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-TownTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paint The Town.app/Paint The Town";
+			};
+			name = Release;
+		};
+		ECC6DF80289F0A7600268CCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-TownUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Paint The Town";
+			};
+			name = Debug;
+		};
+		ECC6DF81289F0A7600268CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-TownUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Paint The Town";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECC6DF50289F0A7400268CCC /* Build configuration list for PBXProject "Paint The Town" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC6DF77289F0A7600268CCC /* Debug */,
+				ECC6DF78289F0A7600268CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC6DF79289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The Town" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC6DF7A289F0A7600268CCC /* Debug */,
+				ECC6DF7B289F0A7600268CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC6DF7C289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The TownTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC6DF7D289F0A7600268CCC /* Debug */,
+				ECC6DF7E289F0A7600268CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC6DF7F289F0A7600268CCC /* Build configuration list for PBXNativeTarget "Paint The TownUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC6DF80289F0A7600268CCC /* Debug */,
+				ECC6DF81289F0A7600268CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECC6DF4D289F0A7400268CCC /* Project object */;
+}
