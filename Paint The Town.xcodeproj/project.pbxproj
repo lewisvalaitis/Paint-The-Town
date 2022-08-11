@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC473F6F28A2B7B600268B3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F6E28A2B7B600268B3D /* MapViewController.swift */; };
+		EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F7228A3F47800268B3D /* UserMapData.swift */; };
 		ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */; };
-		ECC6DF5B289F0A7400268CCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF5A289F0A7400268CCC /* ContentView.swift */; };
+		ECC6DF5B289F0A7400268CCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF5A289F0A7400268CCC /* GameView.swift */; };
 		ECC6DF5D289F0A7600268CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC6DF5C289F0A7600268CCC /* Assets.xcassets */; };
 		ECC6DF60289F0A7600268CCC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC6DF5F289F0A7600268CCC /* Preview Assets.xcassets */; };
 		ECC6DF6A289F0A7600268CCC /* Paint_The_TownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF69289F0A7600268CCC /* Paint_The_TownTests.swift */; };
 		ECC6DF74289F0A7600268CCC /* Paint_The_TownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF73289F0A7600268CCC /* Paint_The_TownUITests.swift */; };
 		ECC6DF76289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */; };
+		ECC6DF85289F0D8200268CCC /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF84289F0D8200268CCC /* StartGameView.swift */; };
+		ECC6DF88289FB76600268CCC /* PaintButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF87289FB76600268CCC /* PaintButton.swift */; };
+		ECC6DF8A289FB9AB00268CCC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF89289FB9AB00268CCC /* TabBar.swift */; };
+		ECC6DF8C28A14ED900268CCC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF8B28A14ED900268CCC /* MapView.swift */; };
+		ECC6DF8E28A14FC000268CCC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF8D28A14FC000268CCC /* GameViewModel.swift */; };
+		ECC6DF9128A2A82800268CCC /* LocationTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF9028A2A82800268CCC /* LocationTracker.swift */; };
+		ECC6DF9428A2A9A700268CCC /* CLLocation+distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF9328A2A9A700268CCC /* CLLocation+distance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC473F6E28A2B7B600268B3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EC473F7228A3F47800268B3D /* UserMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapData.swift; sourceTree = "<group>"; };
 		ECC6DF55289F0A7400268CCC /* Paint The Town.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paint The Town.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownApp.swift; sourceTree = "<group>"; };
-		ECC6DF5A289F0A7400268CCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECC6DF5A289F0A7400268CCC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		ECC6DF5C289F0A7600268CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC6DF5F289F0A7600268CCC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ECC6DF65289F0A7600268CCC /* Paint The TownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paint The TownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +55,13 @@
 		ECC6DF6F289F0A7600268CCC /* Paint The TownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paint The TownUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC6DF73289F0A7600268CCC /* Paint_The_TownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownUITests.swift; sourceTree = "<group>"; };
 		ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ECC6DF84289F0D8200268CCC /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
+		ECC6DF87289FB76600268CCC /* PaintButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintButton.swift; sourceTree = "<group>"; };
+		ECC6DF89289FB9AB00268CCC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		ECC6DF8B28A14ED900268CCC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		ECC6DF8D28A14FC000268CCC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		ECC6DF9028A2A82800268CCC /* LocationTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTracker.swift; sourceTree = "<group>"; };
+		ECC6DF9328A2A9A700268CCC /* CLLocation+distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+distance.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC473F7428A3F48000268B3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF9328A2A9A700268CCC /* CLLocation+distance.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ECC6DF4C289F0A7400268CCC = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +120,12 @@
 		ECC6DF57289F0A7400268CCC /* Paint The Town */ = {
 			isa = PBXGroup;
 			children = (
+				EC473F7428A3F48000268B3D /* Extensions */,
+				ECC6DF9228A2A99000268CCC /* Models */,
+				ECC6DF8F28A2A81600268CCC /* Services */,
+				ECC6DF83289F0C1C00268CCC /* ViewModels */,
+				ECC6DF82289F0C1500268CCC /* Views */,
 				ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */,
-				ECC6DF5A289F0A7400268CCC /* ContentView.swift */,
 				ECC6DF5C289F0A7600268CCC /* Assets.xcassets */,
 				ECC6DF5E289F0A7600268CCC /* Preview Content */,
 			);
@@ -125,6 +155,51 @@
 				ECC6DF75289F0A7600268CCC /* Paint_The_TownUITestsLaunchTests.swift */,
 			);
 			path = "Paint The TownUITests";
+			sourceTree = "<group>";
+		};
+		ECC6DF82289F0C1500268CCC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF86289FB74900268CCC /* SubViews */,
+				ECC6DF84289F0D8200268CCC /* StartGameView.swift */,
+				ECC6DF5A289F0A7400268CCC /* GameView.swift */,
+				ECC6DF89289FB9AB00268CCC /* TabBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ECC6DF83289F0C1C00268CCC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF8D28A14FC000268CCC /* GameViewModel.swift */,
+				EC473F6E28A2B7B600268B3D /* MapViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ECC6DF86289FB74900268CCC /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF87289FB76600268CCC /* PaintButton.swift */,
+				ECC6DF8B28A14ED900268CCC /* MapView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		ECC6DF8F28A2A81600268CCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ECC6DF9028A2A82800268CCC /* LocationTracker.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ECC6DF9228A2A99000268CCC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EC473F7228A3F47800268B3D /* UserMapData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +332,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECC6DF5B289F0A7400268CCC /* ContentView.swift in Sources */,
+				ECC6DF9428A2A9A700268CCC /* CLLocation+distance.swift in Sources */,
+				EC473F6F28A2B7B600268B3D /* MapViewController.swift in Sources */,
+				ECC6DF5B289F0A7400268CCC /* GameView.swift in Sources */,
+				ECC6DF8C28A14ED900268CCC /* MapView.swift in Sources */,
+				ECC6DF8E28A14FC000268CCC /* GameViewModel.swift in Sources */,
+				ECC6DF85289F0D8200268CCC /* StartGameView.swift in Sources */,
+				EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */,
 				ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */,
+				ECC6DF9128A2A82800268CCC /* LocationTracker.swift in Sources */,
+				ECC6DF88289FB76600268CCC /* PaintButton.swift in Sources */,
+				ECC6DF8A289FB9AB00268CCC /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +504,9 @@
 				DEVELOPMENT_TEAM = QTFZ78P9RX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To paint the map";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To paint the map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To paint the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +536,9 @@
 				DEVELOPMENT_TEAM = QTFZ78P9RX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To paint the map";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To paint the map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To paint the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

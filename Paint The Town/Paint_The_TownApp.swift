@@ -11,7 +11,8 @@ import SwiftUI
 struct Paint_The_TownApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameView()
+                .ignoresSafeArea()
         }
     }
 }
