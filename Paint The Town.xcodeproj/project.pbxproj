@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC4172C528A5946F0062950C /* PaintMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4172C428A5946F0062950C /* PaintMapView.swift */; };
 		EC473F6F28A2B7B600268B3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F6E28A2B7B600268B3D /* MapViewController.swift */; };
 		EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F7228A3F47800268B3D /* UserMapData.swift */; };
 		ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC4172C428A5946F0062950C /* PaintMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintMapView.swift; sourceTree = "<group>"; };
 		EC473F6E28A2B7B600268B3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EC473F7228A3F47800268B3D /* UserMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapData.swift; sourceTree = "<group>"; };
 		ECC6DF55289F0A7400268CCC /* Paint The Town.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paint The Town.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				ECC6DF84289F0D8200268CCC /* StartGameView.swift */,
 				ECC6DF5A289F0A7400268CCC /* GameView.swift */,
 				ECC6DF89289FB9AB00268CCC /* TabBar.swift */,
+				EC4172C428A5946F0062950C /* PaintMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				ECC6DF8C28A14ED900268CCC /* MapView.swift in Sources */,
 				ECC6DF8E28A14FC000268CCC /* GameViewModel.swift in Sources */,
 				ECC6DF85289F0D8200268CCC /* StartGameView.swift in Sources */,
+				EC4172C528A5946F0062950C /* PaintMapView.swift in Sources */,
 				EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */,
 				ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */,
 				ECC6DF9128A2A82800268CCC /* LocationTracker.swift in Sources */,

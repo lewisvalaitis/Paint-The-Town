@@ -8,13 +8,14 @@
 
 import Combine
 import MapKit
+import SwiftUI
 
 // MARK: - Game View Model
 extension GameView {
     class ViewModel: ObservableObject {
         
         var mapUserData = UserMapData()
-        private var locationManager =  LocationTracker(meterAccuracy: 10, minimumTrackDistance: 5)
+        private var locationManager =  LocationTracker(meterAccuracy: 10, minimumTrackDistance: 10)
         private var cancellables = Set<AnyCancellable>()
         
         @Published var userPath: [CLLocationCoordinate2D] = []
@@ -23,8 +24,9 @@ extension GameView {
         init() {
             locationManager.newLocation
                 .receive(on: RunLoop.main)
-                .sink { [weak self] location in
+                .sink { [weak self] location in                    
                     self?.mapUserData.currentLocation = location
+                    
                     self?.mapUserData.userPath.append(location)
                 }
                 .store(in: &cancellables)

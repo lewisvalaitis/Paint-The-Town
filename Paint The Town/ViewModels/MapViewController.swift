@@ -6,6 +6,7 @@
 //
 
 import MapKit
+import Combine
 
 
 class MapViewController: UIViewController {
@@ -13,11 +14,16 @@ class MapViewController: UIViewController {
     private weak var userMapData: UserMapData?
     
     private let map = MKMapView()
-    private var paintPinAnnotationView: MKPinAnnotationView!
-    private let paintWidth = 20
+    private var paintPinAnnotationView: MKAnnotationView?
+    private var lastPaintPath: [CLLocationCoordinate2D] = []
+    private let paintWidth: CGFloat = 40
+    
+    private var cancellables = Set<AnyCancellable>()
     
     class CustomPointAnnotation: MKPointAnnotation {
-        var pinCustomImageName:String!
+        func update(location: CLLocationCoordinate2D) {
+            self.coordinate = location
+        }
     }
     
     public override func viewDidLoad() {
@@ -34,34 +40,127 @@ class MapViewController: UIViewController {
         
     }
     
-    public func configure(with data: UserMapData) {
-        self.userMapData = data
-        
-        map.addOverlay(MKPolyline(coordinates: data.userPath, count: data.userPath.count))
+    public func update(with data: UserMapData) {
+        draw()
         
         if let currentLocation = data.currentLocation {
             let region = MKCoordinateRegion( center: currentLocation, latitudinalMeters: CLLocationDistance(exactly:100)!, longitudinalMeters: CLLocationDistance(exactly: 100)!)
             map.setRegion(map.regionThatFits(region), animated: true)
-            
-            setAnotationRollerPin()
         }
+    }
+    
+    public func configure(with data: UserMapData) {
+        self.userMapData = data
     }
 }
 
 // MARK: - Private Methods
 extension MapViewController {
-    private func setAnotationRollerPin() {
+    private func setAnotationRollerPin(_ location: CLLocationCoordinate2D) {
         guard let data = userMapData,
               data.userPath.count >= 1 else { return }
         
-        map.removeAnnotations(map.annotations)
         
-        let pointAnnotation = CustomPointAnnotation()
-        pointAnnotation.pinCustomImageName = "PaintBrush"
-        pointAnnotation.coordinate = data.userPath.last!
         
-        paintPinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: "pin")
-        map.addAnnotation(paintPinAnnotationView.annotation!)
+        if paintPinAnnotationView != nil {
+            
+            setRollerImage(for: &paintPinAnnotationView!)
+            
+            (paintPinAnnotationView!.annotation as! CustomPointAnnotation).update(location: location)
+        } else {
+            let pointAnnotation = CustomPointAnnotation()
+            
+            pointAnnotation.coordinate = location
+            
+            paintPinAnnotationView = MKAnnotationView(annotation: pointAnnotation, reuseIdentifier: "pin")
+            
+            map.addAnnotation(paintPinAnnotationView!.annotation!)
+        }
+    
+    }
+    
+    private func draw() {
+        func addOverlay(for path: [CLLocationCoordinate2D]) {
+            let polyLine = MKGeodesicPolyline(coordinates: path, count: path.count)
+            map.addOverlay(polyLine)
+            
+            map.removeOverlays(map.overlays.filter { !($0 === polyLine) })
+            
+            setAnotationRollerPin(path.last!)
+        }
+        
+        
+        guard let data = userMapData,
+              let lastPoint = lastPaintPath.last,
+              let newPoint = userMapData?.userPath.last else {
+            
+            if lastPaintPath.isEmpty,
+               let newPath = userMapData?.userPath,
+               !newPath.isEmpty {
+                lastPaintPath = newPath
+                addOverlay(for: newPath)
+            }
+                
+            return
+        }
+        
+        let latitudeDelta = newPoint.latitude - lastPoint.latitude
+        let longitudeDelta = newPoint.longitude - lastPoint.longitude
+        
+        var deltas: [(Double, Double)] = []
+        
+        for i in 1...40 {
+            
+            let newLat = (latitudeDelta/15 * Double(i)) + lastPoint.latitude
+            let newLong = (longitudeDelta/15 * Double(i)) + lastPoint.longitude
+            deltas.append((newLat, newLong))
+        }
+        
+        lastPaintPath.append(lastPoint)
+        
+        let timer = Timer.publish(every: 0.05, on: .main, in: .common)
+            .autoconnect()
+        
+        deltas.publisher.zip(timer)
+            .delay(for: 0.025, scheduler: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in
+                self.lastPaintPath = data.userPath
+            }, receiveValue: { newDelta, _ in
+                let lastIndex = self.lastPaintPath.count - 1
+                var animatePoint = self.lastPaintPath[lastIndex]
+                animatePoint.latitude = newDelta.0
+                animatePoint.longitude = newDelta.1
+                self.lastPaintPath[lastIndex] = animatePoint
+                addOverlay(for: self.lastPaintPath)
+            })
+            .store(in: &cancellables)
+    }
+    
+    private func setRollerImage(for annotationView: inout MKAnnotationView){
+        var image = UIImage(named: "PaintBrush") ?? UIImage()
+        
+        let rotationAngle: Float
+        
+        let pathCount = lastPaintPath.count
+        
+        if pathCount > 1 {
+            rotationAngle = CLLocationCoordinate2D.angle(lastPaintPath[pathCount - 2],
+                                                         lastPaintPath[pathCount - 1])
+        } else {
+            rotationAngle = 0
+        }
+        
+
+        image = image.rotate(radians: rotationAngle) ?? UIImage()
+        
+        for annotation in self.map.annotations {
+            if let customAnnotation = annotation as? CustomPointAnnotation {
+                let annotationView = map.view(for: customAnnotation)
+                annotationView?.image = image
+                annotationView?.frame.size = CGSize(width: paintWidth * 1.2, height: paintWidth * 1.2, angle: CGFloat(rotationAngle))
+                
+            }
+        }
     }
 }
 
@@ -90,16 +189,8 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-
-        let customPointAnnotation = annotation as! CustomPointAnnotation
         
-        var rollerImage = (UIImage(named: customPointAnnotation.pinCustomImageName) ?? UIImage())
-        
-        
-        rollerImage = rollerImage.rotate(radians: .pi / 2) ?? UIImage()
-        
-        annotationView?.image = rollerImage
-        annotationView?.frame.size = CGSize(width: paintWidth, height: paintWidth)
+        setRollerImage(for: &annotationView!)
 
         return annotationView
     }
@@ -126,5 +217,14 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return newImage
+    }
+}
+
+extension CGSize {
+    init(width: CGFloat, height: CGFloat, angle: CGFloat) {
+        let newWidth = abs(width * sin(angle)) + abs(height * cos(angle))
+        let newHeight = abs(width * cos(angle)) + abs(height * sin(angle))
+        
+        self.init(width: newWidth, height: newHeight)
     }
 }

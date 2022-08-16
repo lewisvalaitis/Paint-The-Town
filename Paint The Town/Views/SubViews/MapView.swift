@@ -7,22 +7,23 @@
 
 import MapKit
 import SwiftUI
+import Combine
 
 
 //  MARK: MapView
-struct MapView: UIViewControllerRepresentable {
-    @ObservedObject private var data: UserMapData
+struct MapView: UIViewControllerRepresentable, Animatable {
     
-    init(userMapData: UserMapData) {
-        data = userMapData
-    }
+    @ObservedObject var data: UserMapData
 
     public func makeUIViewController(context: Context) -> MapViewController {
-        return MapViewController()
+        let mapVC = MapViewController()
+        mapVC.configure(with: data)
+        
+        return mapVC
     }
 
     public func updateUIViewController(_ map: MapViewController, context: Context) {
-        map.configure(with: data)
+        map.update(with: data)
     }
 }
 

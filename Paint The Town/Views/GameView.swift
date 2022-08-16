@@ -12,7 +12,7 @@ struct GameView: View {
     @StateObject private var viewModel = ViewModel()
     
     var body: some View {
-        MapView(userMapData: viewModel.mapUserData)
+        MapView(data: viewModel.mapUserData)
     }
 }
 
