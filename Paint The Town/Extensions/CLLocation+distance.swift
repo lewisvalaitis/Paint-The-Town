@@ -21,3 +21,9 @@ internal extension CLLocationCoordinate2D {
         return Float(atan2(x, y))
     }
 }
+
+extension CLLocationCoordinate2D: Equatable {
+    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+}

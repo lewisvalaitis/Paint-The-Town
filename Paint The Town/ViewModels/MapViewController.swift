@@ -16,7 +16,15 @@ class MapViewController: UIViewController {
     private let map = MKMapView()
     private var paintPinAnnotationView: MKAnnotationView?
     private var lastPaintPath: [CLLocationCoordinate2D] = []
-    private let paintWidth: CGFloat = 40
+    private var paintWidth: CGFloat {
+        let defaultRegionLattitude = 0.0015365
+        if let currentRegionLat = currentRegionLattitudeSpan {
+            return 40 * (defaultRegionLattitude / currentRegionLat)
+        } else {
+            return 40
+        }
+    }
+    private var currentRegionLattitudeSpan: Double?
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -91,11 +99,11 @@ extension MapViewController {
         
         
         guard let data = userMapData,
+              data.userPath != lastPaintPath,
               let lastPoint = lastPaintPath.last,
               let newPoint = userMapData?.userPath.last else {
             
-            if lastPaintPath.isEmpty,
-               let newPath = userMapData?.userPath,
+            if let newPath = userMapData?.userPath,
                !newPath.isEmpty {
                 lastPaintPath = newPath
                 addOverlay(for: newPath)
@@ -109,10 +117,11 @@ extension MapViewController {
         
         var deltas: [(Double, Double)] = []
         
-        for i in 1...40 {
-            
-            let newLat = (latitudeDelta/15 * Double(i)) + lastPoint.latitude
-            let newLong = (longitudeDelta/15 * Double(i)) + lastPoint.longitude
+        let amountOfIncrements = 40
+        
+        for i in 1...amountOfIncrements {
+            let newLat = (latitudeDelta/Double(amountOfIncrements) * Double(i)) + lastPoint.latitude
+            let newLong = (longitudeDelta/Double(amountOfIncrements) * Double(i)) + lastPoint.longitude
             deltas.append((newLat, newLong))
         }
         
@@ -193,6 +202,17 @@ extension MapViewController: MKMapViewDelegate {
         setRollerImage(for: &annotationView!)
 
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if currentRegionLattitudeSpan == nil {
+            currentRegionLattitudeSpan = mapView.region.span.latitudeDelta
+            draw()
+        } else if let regionLatSpan = currentRegionLattitudeSpan,
+            abs(mapView.region.span.latitudeDelta - regionLatSpan) > 0.0001 || currentRegionLattitudeSpan == nil {
+            currentRegionLattitudeSpan = mapView.region.span.latitudeDelta
+            draw()
+        }
     }
 }
 
