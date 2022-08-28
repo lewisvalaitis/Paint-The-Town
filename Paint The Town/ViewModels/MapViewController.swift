@@ -73,10 +73,7 @@ class MapViewController: UIViewController {
 
 // MARK: - Private Methods
 extension MapViewController {
-    private func setAnotationRollerPin(_ location: CLLocationCoordinate2D) {
-        guard let data = userMapData,
-              data.userPath.count >= 1 else { return }
-        
+    private func updateAnotationRollerPin(_ location: CLLocationCoordinate2D) {
         if paintPinAnnotationView != nil {
             
             setRollerImage(for: &paintPinAnnotationView!)
@@ -91,17 +88,19 @@ extension MapViewController {
             
             map.addAnnotation(paintPinAnnotationView!.annotation!)
         }
-    
     }
     
     private func draw() {
         func addOverlay(for path: [CLLocationCoordinate2D]) {
-            let polyLine = MKGeodesicPolyline(coordinates: path, count: path.count)
+            let polyLine = MKPolyline(coordinates: path, count: path.count)
             map.addOverlay(polyLine)
             
             map.removeOverlays(map.overlays.filter { !($0 === polyLine) })
             
-            setAnotationRollerPin(path.last!)
+            // only updates the annotation view if the location has changed
+            if path.last! != paintPinAnnotationView?.annotation?.coordinate {
+                updateAnotationRollerPin(path.last!)
+            }
         }
         
         guard let data = userMapData,
@@ -123,7 +122,7 @@ extension MapViewController {
         
         var deltas: [(Double, Double)] = []
         
-        let amountOfIncrements = 40
+        let amountOfIncrements = 15
         
         for i in 1...amountOfIncrements {
             let newLat = (latitudeDelta/Double(amountOfIncrements) * Double(i)) + lastPoint.latitude
@@ -137,7 +136,6 @@ extension MapViewController {
             .autoconnect()
         
         deltas.publisher.zip(timer)
-            .delay(for: 0.025, scheduler: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
                 self.lastPaintPath = data.userPath
             }, receiveValue: { newDelta, _ in
@@ -150,6 +148,7 @@ extension MapViewController {
             })
             .store(in: &cancellables)
     }
+    
     
     private func setRollerImage(for annotationView: inout MKAnnotationView){
         var image = UIImage(named: "PaintBrush") ?? UIImage()
@@ -173,7 +172,6 @@ extension MapViewController {
                 let annotationView = map.view(for: customAnnotation)
                 annotationView?.image = image
                 annotationView?.frame.size = CGSize(width: paintWidth * 1.2, height: paintWidth * 1.2, angle: CGFloat(rotationAngle))
-                
             }
         }
     }
@@ -212,7 +210,6 @@ extension MapViewController: MKMapViewDelegate {
 
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation
         }
