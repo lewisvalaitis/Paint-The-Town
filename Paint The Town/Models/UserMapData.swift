@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 
 class UserMapData: ObservableObject {
+    @Published var isTracking = true
     @Published var userPath: [CLLocationCoordinate2D] = []
     @Published var currentLocation: CLLocationCoordinate2D?
 }

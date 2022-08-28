@@ -15,7 +15,7 @@ extension GameView {
     class ViewModel: ObservableObject {
         
         var mapUserData = UserMapData()
-        private var locationManager =  LocationTracker(meterAccuracy: 10, minimumTrackDistance: 10)
+        private var locationManager =  LocationTracker(meterAccuracy: 5, minimumTrackDistance: 10)
         private var cancellables = Set<AnyCancellable>()
         
         @Published var userPath: [CLLocationCoordinate2D] = []

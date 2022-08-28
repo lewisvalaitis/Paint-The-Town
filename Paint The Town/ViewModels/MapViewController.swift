@@ -6,11 +6,14 @@
 //
 
 import MapKit
+import SwiftUI
 import Combine
 
+protocol MapViewControllerDelegate {
+    func didMoveRegion()
+}
 
 class MapViewController: UIViewController {
-    
     private weak var userMapData: UserMapData?
     
     private let map = MKMapView()
@@ -25,8 +28,9 @@ class MapViewController: UIViewController {
         }
     }
     private var currentRegionLattitudeSpan: Double?
-    
     private var cancellables = Set<AnyCancellable>()
+    
+    public var delegate: MapViewControllerDelegate?
     
     class CustomPointAnnotation: MKPointAnnotation {
         func update(location: CLLocationCoordinate2D) {
@@ -46,14 +50,19 @@ class MapViewController: UIViewController {
             map.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
         
+        // add pan gesture to detect when the map moves
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.didDragMap(_:)))
+        panGesture.delegate = self
+
+        // add the gesture to the mapView
+        map.addGestureRecognizer(panGesture)
     }
     
     public func update(with data: UserMapData) {
         draw()
         
-        if let currentLocation = data.currentLocation {
-            let region = MKCoordinateRegion( center: currentLocation, latitudinalMeters: CLLocationDistance(exactly:100)!, longitudinalMeters: CLLocationDistance(exactly: 100)!)
-            map.setRegion(map.regionThatFits(region), animated: true)
+        if data.isTracking {
+            setUserRegion()
         }
     }
     
@@ -67,8 +76,6 @@ extension MapViewController {
     private func setAnotationRollerPin(_ location: CLLocationCoordinate2D) {
         guard let data = userMapData,
               data.userPath.count >= 1 else { return }
-        
-        
         
         if paintPinAnnotationView != nil {
             
@@ -96,7 +103,6 @@ extension MapViewController {
             
             setAnotationRollerPin(path.last!)
         }
-        
         
         guard let data = userMapData,
               data.userPath != lastPaintPath,
@@ -171,6 +177,18 @@ extension MapViewController {
             }
         }
     }
+    
+    private func setUserRegion() {
+        guard let currentLocation = userMapData?.currentLocation else { return }
+        
+        let region = MKCoordinateRegion( center: currentLocation, latitudinalMeters: CLLocationDistance(exactly:100)!, longitudinalMeters: CLLocationDistance(exactly: 100)!)
+        map.setRegion(map.regionThatFits(region), animated: true)
+    }
+    
+    @objc func didDragMap(_ sender: UIGestureRecognizer) {
+        // User moved region
+        delegate?.didMoveRegion()
+    }
 }
 
 
@@ -209,11 +227,22 @@ extension MapViewController: MKMapViewDelegate {
             currentRegionLattitudeSpan = mapView.region.span.latitudeDelta
             draw()
         } else if let regionLatSpan = currentRegionLattitudeSpan,
-            abs(mapView.region.span.latitudeDelta - regionLatSpan) > 0.0001 || currentRegionLattitudeSpan == nil {
+                  abs(mapView.region.span.latitudeDelta - regionLatSpan) > 0.0001 || currentRegionLattitudeSpan == nil {
+            // user changed zoom
             currentRegionLattitudeSpan = mapView.region.span.latitudeDelta
             draw()
         }
     }
+    
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension MapViewController: UIGestureRecognizerDelegate {
+    // Allows over gestures to occur
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
 }
 
 extension UIImage {

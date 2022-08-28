@@ -10,6 +10,7 @@
 		EC4172C528A5946F0062950C /* PaintMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4172C428A5946F0062950C /* PaintMapView.swift */; };
 		EC473F6F28A2B7B600268B3D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F6E28A2B7B600268B3D /* MapViewController.swift */; };
 		EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC473F7228A3F47800268B3D /* UserMapData.swift */; };
+		EC58E9E828BB9633007BA037 /* RecentreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58E9E728BB9633007BA037 /* RecentreButton.swift */; };
 		ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */; };
 		ECC6DF5B289F0A7400268CCC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC6DF5A289F0A7400268CCC /* GameView.swift */; };
 		ECC6DF5D289F0A7600268CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC6DF5C289F0A7600268CCC /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		EC4172C428A5946F0062950C /* PaintMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintMapView.swift; sourceTree = "<group>"; };
 		EC473F6E28A2B7B600268B3D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EC473F7228A3F47800268B3D /* UserMapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapData.swift; sourceTree = "<group>"; };
+		EC58E9E728BB9633007BA037 /* RecentreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentreButton.swift; sourceTree = "<group>"; };
 		ECC6DF55289F0A7400268CCC /* Paint The Town.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paint The Town.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC6DF58289F0A7400268CCC /* Paint_The_TownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paint_The_TownApp.swift; sourceTree = "<group>"; };
 		ECC6DF5A289F0A7400268CCC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				ECC6DF87289FB76600268CCC /* PaintButton.swift */,
 				ECC6DF8B28A14ED900268CCC /* MapView.swift */,
+				EC58E9E728BB9633007BA037 /* RecentreButton.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				ECC6DF85289F0D8200268CCC /* StartGameView.swift in Sources */,
 				EC4172C528A5946F0062950C /* PaintMapView.swift in Sources */,
 				EC473F7328A3F47800268B3D /* UserMapData.swift in Sources */,
+				EC58E9E828BB9633007BA037 /* RecentreButton.swift in Sources */,
 				ECC6DF59289F0A7400268CCC /* Paint_The_TownApp.swift in Sources */,
 				ECC6DF9128A2A82800268CCC /* LocationTracker.swift in Sources */,
 				ECC6DF88289FB76600268CCC /* PaintButton.swift in Sources */,
@@ -505,7 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Paint The Town/Preview Content\"";
-				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				DEVELOPMENT_TEAM = 4ZKMAZ2P3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To paint the map";
@@ -521,7 +525,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-Town";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Paint-The-Town";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -537,7 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Paint The Town/Preview Content\"";
-				DEVELOPMENT_TEAM = QTFZ78P9RX;
+				DEVELOPMENT_TEAM = 4ZKMAZ2P3Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To paint the map";
@@ -553,7 +557,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Xim.Paint-The-Town";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Paint-The-Town";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
